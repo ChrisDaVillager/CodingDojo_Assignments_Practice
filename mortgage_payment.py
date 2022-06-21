@@ -45,3 +45,19 @@ print(mortgage)
 pass
 
 # Ran into 'int' object not callabe again - feel like I'm getting closer
+
+# Formula: P * r(1 + r)t / (1 + r)t - 1
+# Attempt 4
+# Wait......I think I realized the issue
+# Defined all the variables, but needed to USE the variables instead of what defined them
+
+P = 400000 # Principal
+r = 0.03 / 12 # Rate
+t = 360 # Term (Payments)
+
+num = (r(1 + r)**t)
+den = ((1 + r)**t - 1)
+mortgage = P * (num / den)
+print(mortgage)
+
+# Ran into 'float' ojbect not callable
