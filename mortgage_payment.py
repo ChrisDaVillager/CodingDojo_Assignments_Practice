@@ -31,33 +31,23 @@ pass
 # Added multiplication in num - answer came out to 0.0...interesting...
 
 # Formula: P * r(1 + r)t / (1 + r)t - 1
-# Removed int
-# Attempt 3
+# Attempt 5
+# Realized forgot to tell computer to multiply r to (1 + r) in num
 
 P = 400000 # Principal
 r = 0.03 / 12 # Rate
 t = 360 # Term (Payments)
 
-num = (0.03 / 12 (1 + 0.03 / 12)**360)
-den = (1 + (0.03 / 12)**360 - 1)
-mortgage = P * (num /den)
-print(mortgage)
-pass
-
-# Ran into 'int' object not callabe again - feel like I'm getting closer
-
-# Formula: P * r(1 + r)t / (1 + r)t - 1
-# Attempt 4
-# Wait......I think I realized the issue
-# Defined all the variables, but needed to USE the variables instead of what defined them
-
-P = 400000 # Principal
-r = 0.03 / 12 # Rate
-t = 360 # Term (Payments)
-
-num = (r(1 + r)**t)
+num = (r * (1 + r)**t)
 den = ((1 + r)**t - 1)
 mortgage = P * (num / den)
-print(mortgage)
+print(f'Monthly Mortgage Due: ${mortgage}')
 
-# Ran into 'float' ojbect not callable
+P = 400000 # Principal
+r = 0.06 / 12 # Rate
+t = 360 # Term (Payments)
+
+num = (r * (1 + r)**t)
+den = ((1 + r)**t - 1)
+mortgage = P * (num / den)
+print(f'Monthly Mortgage Due: ${mortgage}')
