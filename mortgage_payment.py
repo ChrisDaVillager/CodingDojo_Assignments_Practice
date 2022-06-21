@@ -11,3 +11,21 @@ t = 30 # Term
 mortgage = (P * r * t) / 100
 print(mortgage)
 # End result $3600/7200 (3%/6%, respectively) - Seems excessive for a monthly payment. Not correct
+
+# Use formula given P * r(1 + r)t / (1 + r)t - 1
+# Remember exponents are denoted by **
+# Order of operations would complicate answer, would separating numerator & denominator work?
+# Attempt 2
+
+P = 400000 # Principal
+r = 0.03 / 12 # Rate
+t = 360 # Term (Payments)
+
+num = int(0.03 / 12 * (1 + 0.03 / 12)**360)
+den = int((1 + 0.03 / 12)**360 - 1)
+mortgage = P * (num / den)
+print(mortgage)
+pass
+
+# This method did not work - Kept running into int 'object' not callable
+# Added multiplication in num - answer came out to 0.0...interesting...
