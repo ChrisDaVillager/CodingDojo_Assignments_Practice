@@ -29,3 +29,19 @@ pass
 
 # This method did not work - Kept running into int 'object' not callable
 # Added multiplication in num - answer came out to 0.0...interesting...
+
+# Formula: P * r(1 + r)t / (1 + r)t - 1
+# Removed int
+# Attempt 3
+
+P = 400000 # Principal
+r = 0.03 / 12 # Rate
+t = 360 # Term (Payments)
+
+num = (0.03 / 12 (1 + 0.03 / 12)**360)
+den = (1 + (0.03 / 12)**360 - 1)
+mortgage = P * (num /den)
+print(mortgage)
+pass
+
+# Ran into 'int' object not callabe again - feel like I'm getting closer
